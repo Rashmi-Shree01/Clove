@@ -1,0 +1,611 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Insights</title>
+    <meta name="description" content="Essential Insights">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <!-- Hotjar Tracking Code for https://demo.clove.ai/clove -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 1424267, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/scss/style.css">
+    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="assets/scss/home.css">
+    <link rel="stylesheet" href="assets/scss/configurations.css"> -->
+    <link rel="stylesheet" href="assets/scss/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default sticky-top">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/clovelogoMain.png" alt="Clove">
+                </a>
+                <a class="navbar-brand hidden" href="#">
+                    <img src="images/cloveLogo.png" alt="C">
+                </a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="recommendations.html">
+                            <i class="menu-icon fa fa-bolt" data-toggle="tooltip" title="Recommendations"></i>
+                            Recommendations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="menu-icon fa fa-home" data-toggle="tooltip" title="Home"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales.html">
+                            <i class="menu-icon fa fa-line-chart" data-toggle="tooltip" title="Sales"></i> Sales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="payments.html">
+                            <i class="menu-icon fa fa-money" data-toggle="tooltip" title="Payments"></i> Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="trafficSnapshot.html">
+                            <i class="menu-icon fa fa-user" data-toggle="tooltip" title="Traffic"></i> Traffic
+                        </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="menu-icon fa fa-bullhorn" data-toggle="tooltip"
+                                title="Campaigns"></i>Campaigns
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <a href="#">Summary Report</a>
+                            </li>
+                            <li>
+                                <a href="campaignPerformance.html">Performance</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="menu-icon fa fa-truck" data-toggle="tooltip"
+                                title="Shipping Reports"></i>Shipping Reports
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <a href="trackingReport.html">Shipping Report</a>
+                            </li>
+                            <li>
+                                <a href="shippingCod.html">COD Report</a>
+                            </li>
+                            <li>
+                                <a href="shippingDetails.html">Shipment Details</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="customers.html">
+                            <i class="menu-icon fa fa-address-card" data-toggle="tooltip" title="Customers"></i>
+                            Customers
+                        </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="menu-icon fa fa-tasks" data-toggle="tooltip" title="Advanced Reports"></i>Advanced
+                            Reports</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <!-- <li>
+                                                                <a href="advanceTraffic.html">DropOff</a>
+                                                            </li> -->
+                            <li>
+                                <!-- <i class="menu-icon fa fa-area-chart" data-toggle="tooltip" title="Customer Analysis"></i> -->
+                                <a href="advanceCustomer.html">Customer</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="menu-icon fa fa-users" data-toggle="tooltip" title="Advanced Traffic"></i>Advanced
+                            Traffic</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <a href="summary.html">Summary</a>
+                            </li>
+                            <li>
+                                <a href="conversions.html">Conversions</a>
+                            </li>
+                            <li>
+                                <a href="journey.html">Journey</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="shoppingFeeds.html">
+                            <i class="menu-icon fa fa-shopping-cart" data-toggle="tooltip"
+                                title="Google Shopping Center"></i> Google Shopping Center
+                        </a>
+                    </li>
+                    <li>
+                        <a href="configurations.html">
+                            <i class="menu-icon fa fa-gears" data-toggle="tooltip" title="Configurations"></i>
+                            Configurations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="allDownloads.html">
+                            <i class="menu-icon fa fa-download" data-toggle="tooltip" title="Downloads"></i> Downloads
+                        </a>
+                    </li>
+                    <!-- <li>
+                                                        <a href="callRail.html"> 
+                                                            <i class="menu-icon fa fa-phone" data-toggle="tooltip" title="CallRail"></i> CallRail
+                                                        </a>
+                                                    </li> -->
+                    <!-- /.menu-title -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Left Panel -->
+
+    <!-- sidepanel for filters -->
+    <div id="mySidenav" class="sidenav">
+        <div class="sidebar-header">
+            <span class="filter-heading">
+                <u>Filters</u>
+            </span>
+            <a href="#" class="closebtn">&times;</a>
+        </div>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            Default Currency
+                            <i class="menu-icon fa fa-sort-down"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <div class="globalFilters"
+                                        style="color: black; font-weight: 500; margin-left: 3em; height: 117px; overflow: auto">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header sticky-top">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left">
+                        <i class="fa fa fa-tasks"></i>
+                    </a>
+                    <div class="page-name">
+                        <span>SUMMARY</span>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <!-- <a href="http://insights.scalend.com" class="btn btn-info topButton" role="button" style="color: black; background: #ffa500;border-color: #ffa500;">
+                        Start Your Free Trial
+                    </a> -->
+                    <div class="row timeline-row">
+
+                        <!-- <button class="btn btn-link" style="background: #ffa500; margin-right: -34%; border-color: #ffa500;">
+                            <a href="sales.html" style="color: black">Start Your Free Trial</a>
+                        </button> -->
+                        <div class="multi-sel">
+                            <select class="form-selector time-range">
+                                <option th:text="#{header.yesterday}">Yesterday</option>
+                                <option th:text="#{header.thisweek}">This Week</option>
+                                <option th:text="#{header.lastweek}">Last week</option>
+                                <option th:text="#{header.thismonth}" selected="true">This Month</option>
+                                <option th:text="#{header.lastmonth}">Last month</option>
+                                <option>Last 6 month</option>
+                                <option th:text="#{header.year}">Year</option>
+                            </select>
+                        </div>
+
+                        <div class="dropdown float-right">
+                            <div class="header-left config">
+                                <a href="#">
+                                    <i class="menu-icon fa fa-filter" id="disabledFilter"></i>
+                                    <!-- <i class="menu-icon fa fa-gears" data-toggle="tooltip" title="Configurations"></i> -->
+                                </a>
+                            </div>
+                            <!-- <button class="btn btn-info" id="filterNav">+</button> -->
+                        </div>
+
+                        <div class="float-right logout">
+                            <a class="nav-link" href="page-login.html">
+                                <i class="fa fa-power-off" data-toggle="tooltip" title="Logout"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- /header -->
+        <!-- Header-->
+        <div class="container-fluid">
+            <!-- First Row -->
+            <div class="row" style="margin-top: 0.5em">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card campaign-card" style="padding: 0px;padding-left:1em">
+                        <p class="card-info-text">
+                            <strong id="clicks">35.4K</strong>
+                        </p>
+                        <p class="card-info-data" id="clicksPercent">0.25%
+                            <i class="up-trend-icon fa fa-arrow-up trend-icons"></i>
+                        </p>
+                        <p class="card-info-title">Clicks
+                            <small>
+                                <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                    data-original-title="Clicks" data-html="true" data-trigger="hover"
+                                    data-content="Sum of Clicks received from different paid Ads (Google Ads, FB Ads, Instagram)"></i>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card campaign-card" style="padding: 0px;padding-left:1em">
+                        <p class="card-info-text">
+                            <strong id="ctr">0.3%</strong>
+                        </p>
+                        <p class="card-info-data" id="ctrPercent">0.25%
+                            <i class="down-trend-icon fa fa-arrow-down trend-icons"></i>
+                        </p>
+                        <p class="card-info-title">CTR
+                            <small>
+                                <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                    data-original-title="CTR" data-html="true" data-trigger="hover" data-content="Ratio of Users who click the ad to the users who see the ad in the network. Clicks /Impressions
+                                    "></i>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card campaign-card" style="padding: 0px;padding-left:1em">
+                        <p class="card-info-text">
+                            <strong id="cpc">$1.6</strong>
+                        </p>
+                        <p class="card-info-data" id="cpcPercent">0.25%
+                            <i class="up-trend-icon fa fa-arrow-up trend-icons"></i>
+                        </p>
+                        <p class="card-info-title">CPC
+                            <small>
+                                <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                    data-original-title="CPC" data-html="true" data-trigger="hover"
+                                    data-content="Cost Per Click : Price paid for every click on the Ad in your marketing campaigns"></i>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card campaign-card" style="padding: 0px;padding-left:1em">
+                        <p class="card-info-text">
+                            <strong id="impressions">650</strong>
+                        </p>
+                        <p class="card-info-data" id="impressionsPercent">0.25%
+                            <i class="down-trend-icon fa fa-arrow-down trend-icons"></i>
+                        </p>
+                        <p class="card-info-title">Impressions
+                            <small>
+                                <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                    data-original-title="Impressions" data-html="true" data-trigger="hover"
+                                    data-content="No. of times your paid Ads are displayed on the search / display network"></i>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="deleteWhenLarge" style="display: none;margin-top:-0.5em;">
+                <div class="card" style="text-align: center;margin-left:1em">
+                    <ul class="list-inline">
+                        <!-- <li class="list-inline-item" style="padding: 1.1em">
+                                        <h4 class="list-group-item-heading"><b>Impressions</b></h4>
+                                        <h3 id="impressionData">40.5K</h3>
+                                    </li> -->
+                        <li class="list-inline-item" style="padding: 1.1em">
+                            <h4 class="list-group-item-heading">
+                                <b>Cost</b>
+                            </h4>
+                            <h3 id="costData">$2345.00</h3>
+                        </li>
+                        <li class="list-inline-item" style="padding: 1.1em">
+                            <h4 class="list-group-item-heading">
+                                <b>Conversions</b>
+                            </h4>
+                            <h3 id="conversionData">2.68%</h3>
+                        </li>
+                        <li class="list-inline-item" style="padding: 1.1em">
+                            <h4 class="list-group-item-heading">
+                                <b>Cost/Conversion</b>
+                            </h4>
+                            <h3 id="costPerConversionData">$59.50</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Donut charts -->
+            <div class="card donut-card" style="margin: 0px;margin-top: -1em;">
+                <div class="class-header">
+                    <div class="card-body pb-0">
+                        <p class="title-for-card">Campaigns by Channel
+                            <small>
+                                <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                    data-original-title="Campaigns by Channel" data-html="true" data-trigger="hover"
+                                    data-content="Comparison of Clicks, Cost &amp; Conversion across different Ad channels (Google, FB, Insta). Identify the best performing channels to plan your Ad Budget"></i>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-3" style="margin-left: 6%">
+                        <!-- <center>
+                            <p style="text-align: center; font-weight: 600; margin-top: 8%;">Clicks</p>
+                        </center> -->
+                        <div class="clickDonutChart" style="display: none">
+                            <canvas id="clickDonut"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-3" style="margin-left: 6%">
+                        <!-- <center>
+                            <p style="text-align: center; font-weight: 600; margin-top: 8%;">Cost</p>
+                        </center> -->
+                        <div class="costDonutChart" style="display: none">
+                            <canvas id="costDonut"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-3" style="margin-left: 6%">
+                        <!-- <center>
+                            <p style="text-align: center; font-weight: 600; margin-top: 8%">Conversions</p>
+                        </center> -->
+                        <div class="conversionDonutChart" style="display: none">
+                            <canvas id="conversionDonut"></canvas>
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-12 col-md-4 col-lg-4">
+                        <center><p class="title-for-card">Clicks</p></center>
+                        <canvas id="clickDonut"></canvas>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <center><p class="title-for-card">Cost</p></center>
+                        <canvas id="costDonut"></canvas>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                            <center><p class="title-for-card">Conversions</p></center>
+                        <canvas id="conversionDonut"></canvas>
+                    </div> -->
+                </div>
+                <!-- Adwords/Facebook ads/Twitter/Bing table -->
+                <div class="row" style="padding: 10px">
+                    <table class="table table-responsive table-bordered table-hover table-fixed"
+                        id="platformDetailsTable" data-page-length="5" style="width: 100%; display: table;">
+                        <tbody>
+                            <thead style="font-size: 100%">
+                                <tr class="bg-table-head" style="text-align: center">
+                                    <th>Platform</th>
+                                    <th>Clicks</th>
+                                    <th>Impressions</th>
+                                    <th>CTR</th>
+                                    <th>CPC</th>
+                                    <th>Cost</th>
+                                    <th>Conversions</th>
+                                    <th>Conversion rate</th>
+                                    <th>Cost per Conversion</th>
+                                </tr>
+                            </thead>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Second Row -->
+            <div class="row" style="margin:0px;margin-top: 0.5em;">
+                <!-- Devices Graph -->
+                <div id="deviceGraphColumn" class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
+                    <div class="card row">
+                        <div class="class-header">
+                            <div class="card-body pb-0">
+                                <p class="title-for-card">Campaigns by Device
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                            data-original-title="Campaigns by Device" data-html="true"
+                                            data-trigger="hover"
+                                            data-content="Ad Performance based on devices – Mobile, Desktops, Tablet. Helps you identify the most profitable platform to decide your ad spend."></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- Device list -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10" style="padding-top: 0.6em">
+                            <ul class="deviceList">
+                                <li>
+                                    <div class="text-muted">
+                                        <i class="card-icon-left fa fa-laptop"></i>
+                                    </div>
+                                    <strong id="computerSession" class="device-padding">Desktops</strong>
+                                </li>
+                                <li>
+                                    <div class="text-muted">
+                                        <i class="card-icon-left fa fa-tablet"></i>
+                                    </div>
+                                    <strong id="tabletSessions" class="device-padding">Tablets</strong>
+                                </li>
+                                <li>
+                                    <div class="text-muted">
+                                        <i class="card-icon-left fa fa-mobile"></i>
+                                    </div>
+                                    <strong id="returningCustomers" class="device-padding">Mobile Phones</strong>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- graph -->
+                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                            <canvas id="deviceGraph"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Impressions data -->
+                <div id="deleteWhentablet" class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                    <div class="card" style="display: hidden">
+                        <ul class="list-group">
+                            <!-- <li class="list-group-item">
+                                <h4 class="list-group-item-heading">Impressions</h4>
+                                <h3 id="impressionData"><b id="impressionDataCampaign">40.5K</b></h3>
+                            </li> -->
+                            <li class="list-group-item" style="padding: 1.1em">
+                                <h4 class="list-group-item-heading">Cost</h4>
+                                <h3 id="costData">
+                                    <b id="costDataCampaign">$2345.00</b>
+                                </h3>
+                            </li>
+                            <li class="list-group-item" style="padding: 1.1em">
+                                <h4 class="list-group-item-heading">Conversions</h4>
+                                <h3 id="conversionData">
+                                    <b id="conversionDataCampaign">2.68%</b>
+                                </h3>
+                            </li>
+                            <li class="list-group-item" style="padding: 1.1em">
+                                <h4 class="list-group-item-heading">Cost/Conversion</h4>
+                                <h3 id="costPerConversionData">
+                                    <b id="costPerConversionDataCampaign">$59.50</b>
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Clicks/CTR/CPC comparison graph -->
+                <div id="clicksctrcpc" class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
+                    <div class="card row">
+                        <div class="class-header">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#clicksVctr">Clicks/CTR</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#ctrGraph">CTR/CPC</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div id="clicksVctr" class="tab-pane container active" style="padding: 1.1em">
+                                <canvas id="clicksGraph"></canvas>
+                            </div>
+                            <div id="ctrGraph" class="tab-pane container fade" style="padding: 1.1em">
+                                <canvas id="cpcGraph"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <footer class="main-footer">
+                <div style="text-align: right">
+                    <strong>
+                        Copyright © 2019
+                        <a href="http://www.clove.ai" target="_blank">
+                            <img class="footer-logo" src="images/bottomCloveLogo.jpg" alt="C">Clove</a>
+                    </strong>
+                </div>
+            </footer>
+        
+        </div>
+
+        <!-- Balance score card -->
+        <div class="row">
+
+        </div>
+
+
+    </div>
+    <!-- .content -->
+
+
+    </div>
+    <!-- /#right-panel -->
+    <!-- Right Panel -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/campaign.js"></script>
+    <script src="assets/js/timelineChangesCampaign.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+
+
+</body>
+
+</html>

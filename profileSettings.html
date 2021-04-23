@@ -1,0 +1,1060 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Insights</title>
+    <meta name="description" content="Essential Insights">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+    <!-- Hotjar Tracking Code for https://demo.scalend.com/insights/ -->
+    <!-- <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:959833,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script> -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/scss/style.css">
+    <link rel="stylesheet" href="assets/scss/main.css">
+    <!-- <link rel="stylesheet" href="assets/scss/common.min.css> -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <style>
+        
+        /*  profile tab */
+        .profile-tab-header {
+            font-size: 30px;
+        }
+        div.profile-tab-container{
+            z-index: 10;
+            background-color: #ffffff;
+            padding: 0 !important;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            border:1px solid #ddd;
+            margin-top: 20px;
+            margin-left: 50px;
+            -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            background-clip: padding-box;
+            opacity: 0.97;
+            filter: alpha(opacity=97);
+        }
+        div.profile-tab-menu{
+            padding-right: 0;
+            padding-left: 0;
+            padding-bottom: 0;
+        }
+        div.profile-tab-menu div.list-group{
+            margin-bottom: 0;
+        }
+        div.profile-tab-menu div.list-group>a{
+            margin-bottom: 0;
+        }
+        .list-group-item {
+            border: 1px;
+        }
+        .list-group-item.active {
+            z-index: 2;
+            color: #fff;
+            border-color: white;
+            border-left: 5px solid #007bff;
+        }
+        div.profile-tab-menu div.list-group>a.active,
+        div.profile-tab-menu div.list-group>a.active .glyphicon,
+        div.profile-tab-menu div.list-group>a.active .fa{
+            background: transparent;
+            /* background-image: #5A55A3; */
+            color: black;
+        }
+        div.profile-tab-content{
+            background-color: #ffffff;
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+        div.profile-tab div.profile-tab-content:not(.active){
+            display: none;
+        }
+        .profile-tab-content {
+            min-height: 31em;
+        }
+        .profile-tab-content .row {
+            margin-bottom: -1%;
+            margin-top: 2%;
+        }
+        .profile-tab-content hr {
+            border-top: dotted 1px; 
+            margin: 1% 3% 1% 0%;
+        }
+        .settings-head {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .settings-value {
+            font-size: 14px;
+        }
+        .settings-change {
+            font-size: 14px;
+            text-align: right;
+            margin-right: 2em;
+            color: #007bff;
+        }
+        .user-settings {
+            font-size: 14px;
+            color: #007bff;
+        }
+        #userDetails tr {
+            font-size: 12px;
+            text-align: center;
+        }
+        .collapseBody .card {
+            margin-left: 6em;
+            margin-bottom: 1em;
+        }
+        .collapseBody p,
+        .modal-body p {
+            margin-bottom: 0%;
+            font-size: 14px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            margin-top: 1em;
+            font-size: 12px;
+        }
+        .deleteRef {
+            display: inline-block;
+            margin-top: 1em;
+            margin-left: 3em;
+        }
+        .userAddingButton {
+            text-align: right;
+        }
+        .addingUser {
+            font-size: 12px;
+            width: 7em;
+        }
+        .selectPlan {
+            font-size: 14px;
+        }
+        .storeSelect {
+            font-size: 12px;
+            width: 17em;
+            margin-left: 2em;
+            margin-bottom: 2em;
+        }
+        .modalBtn {
+            margin-top: 1em;
+            text-align: right;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">Scalend</a>
+                <a class="navbar-brand hidden" href="#"><img src="images/scalendLogo.png" alt="S"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#">
+                            <i class="menu-icon fa fa-home" data-toggle="tooltip" title="Home"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="trafficSnapshot.html"> 
+                            <i class="menu-icon fa fa-user" data-toggle="tooltip" title="Traffic"></i> Traffic
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales.html"> 
+                            <i class="menu-icon fa fa-line-chart" data-toggle="tooltip" title="Sales"></i> Sales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="payments.html"> 
+                            <i class="menu-icon fa fa-money" data-toggle="tooltip" title="Payments"></i> Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="customers.html"> 
+                            <i class="menu-icon fa fa-users" data-toggle="tooltip" title="Customers"></i> Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="campaigns.html"> 
+                            <i class="menu-icon fa fa-bullhorn" data-toggle="tooltip" title="Campaigns"></i> Campaigns
+                        </a>
+                    </li>
+                    <li>
+                        <a href="configurations.html"> 
+                            <i class="menu-icon fa fa-gears" data-toggle="tooltip" title="Configurations"></i> Configurations
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="callRail.html"> 
+                            <i class="menu-icon fa fa-phone" data-toggle="tooltip" title="CallRail"></i> CallRail
+                        </a>
+                    </li> -->
+                    <!-- /.menu-title -->
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="page-name"> 
+                        <span>PROFILE</span>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <!-- <a href="http://insights.scalend.com" class="btn btn-info topButton" role="button" style="color: black; background: #ffa500;border-color: #ffa500;">
+                        Start Your Free Trial
+                    </a> -->
+                    <div class="row timeline-row">
+                        
+                        <!-- <button class="btn btn-link" style="background: #ffa500; margin-right: -34%; border-color: #ffa500;">
+                            <a href="sales.html" style="color: black">Start Your Free Trial</a>
+                        </button> -->
+                        <!-- <div class="multi-sel">
+                            <select class="form-selector time-range">
+                                    <option th:text="#{header.yesterday}" selected="true">Yesterday</option>
+                                    <option th:text="#{header.thisweek}">This Week</option>
+                                    <option th:text="#{header.lastweek}">Last week</option>
+                                    <option th:text="#{header.thismonth}">This Month</option>
+                                    <option th:text="#{header.lastmonth}">Last month</option>
+                                    <option>Last 6 month</option>
+                                    <option th:text="#{header.year}">Year</option>
+                            </select>
+                        </div> -->
+                            
+                        <!-- <div class="dropdown float-right">
+                            <div class="header-left config">
+                                <a href="#"> 
+                                    <i class="menu-icon fa fa-filter" id="filterNav"></i>
+                                </a>
+                            </div>
+                        </div> -->
+
+                        <div class="logout" style="margin-left: 10em;">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-power-off" data-toggle="tooltip" title="Logout"></i>
+                            </a>
+                        </div>
+                                
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+        <!-- /header -->
+        <!-- Header-->
+         
+        <!-- .content -->
+        
+        <div class="container-fluid">
+ 
+            <div class="row">
+                <div class="col-sm-6 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-body pb-0">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 profile-tab-menu">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item active text-center">
+                                        Business Information
+                                    </a>
+                                    <a href="#" class="list-group-item text-center">
+                                        Account Settings
+                                    </a>
+                                    <a href="#" class="list-group-item text-center">
+                                        Manage Users
+                                    </a>
+                                    <a href="#" class="list-group-item text-center">
+                                        Notifications
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 profile-tab">
+                                <!-- business information section -->
+                                <div class="profile-tab-content active">
+                                    <!-- <p class="profile-tab-header">Business Information</p> -->
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Name</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value">John Lane</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#nameCollapse" data-toggle="collapse">
+                                                <p class="settings-change">Change</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="nameCollapse">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Enter New Name:</p>
+                                                    <input type="text" name="newName" id="newName" style="width:280px;" required/>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <input class="btn btn-primary" type="reset" value="Clear" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Email address</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value">john.lane@gmail.com</p>
+                                        </div>
+                                        <!-- <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#emailCollapse" data-toggle="collapse">
+                                                <p class="settings-change">Update</p>
+                                            </a>
+                                        </div> 
+                                        <div class="collapse collapseBody" id="emailCollapse">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Enter New Email Id:</p>
+                                                    <input type="email" name="newEmail" id="newEmail" style="width:280px;"/>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                </form>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Address</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value">111 Pioneer Way, Mountain View, CA 94041, USA</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#addressCollapse" data-toggle="collapse">
+                                                <p class="settings-change">Update</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="addressCollapse">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Enter New Address:</p>
+                                                    <p>Address Line 1:</p>
+                                                    <input type="text" name="addressLine1" id="addressLine1" style="width:280px;" required/>
+                                                    <p>Address Line 2:</p>
+                                                    <input type="text" name="addressLine2" id="addressLine2" style="width:280px;" required/>
+                                                    <p>City:</p>
+                                                    <input type="text" name="city" id="city" style="width:280px;" required/>
+                                                    <p>State/Province/Region:</p>
+                                                    <input type="text" name="state" id="state" style="width:280px;" required/>
+                                                    <p>ZIP/Postal Code:</p>
+                                                    <input type="number" name="postalCode" id="postalCode" style="width:280px;" required/>
+                                                    <p>Country:</p>
+                                                    <input type="text" name="country" id="country" style="width:280px;" required/>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <input class="btn btn-primary" type="reset" value="Clear" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Phone</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value">+1 888-888-8888</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#phoneCollapse" data-toggle="collapse">
+                                                <p class="settings-change">Update</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="phoneCollapse">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Enter New Phone No.:</p>
+                                                    <input type="tel" name="newPhone" id="newPhone" style="width:280px;" required/>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <input class="btn btn-primary" type="reset" value="Clear" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Password</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value">**********</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#pwdCollapse" data-toggle="collapse">
+                                                <p class="settings-change">Change</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="pwdCollapse">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Type your old password:</p>
+                                                    <input type="password" name="oldPwd" id="oldPwd" style="width:280px;" required/>
+                                                    <br />
+                                                    <p>Type your new password:</p>
+                                                    <input type="password" name="newPwd" id="newPwd" style="width:280px;" required/>
+                                                    <br />
+                                                    <p>Confirm your new password:</p>
+                                                    <input type="password" name="newPwdConfirm" id="newPwdConfirm" style="width:280px;" required/>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <input class="btn btn-primary" type="reset" value="Clear" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <!-- <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Security questions</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value"></p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#">
+                                                <p class="settings-change">Add</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Business information</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value"></p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#">
+                                                <p class="settings-change">Update</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <hr /> -->
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Plan</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value">Pro</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#planCollapse" data-toggle="collapse">
+                                                <p class="settings-change">Change</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="planCollapse">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <select class="planSelect">
+                                                        <option value="selectOption">Select a Plan</option>
+                                                        <option value="basic">Basic</option>
+                                                        <option value="pro">Pro</option>
+                                                    </select>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <!-- account settings section -->
+                                <div class="profile-tab-content">
+                                    <p style="display: inline;">Select Store:</p>
+                                    <div class="selectingStoreOptions" style="display: inline;">
+                                        <select class="storeSelect">
+                                            <option value="tomsOrganicFarm">Toms Organic Farm</option>
+                                            <option value="easyFarming">Easy Farming</option>
+                                            <option value="allEssentials">All Essentials</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- <p class="profile-tab-header">Account Settings</p> -->
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Store Name</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value">Toms Organic Farm</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#storeCollapse" data-toggle="collapse">
+                                                <p class="settings-change">Change</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="storeCollapse">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Enter New Store:</p>
+                                                    <input type="text" name="newStoreName" id="newStoreName" style="width:280px;" required/>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <input class="btn btn-primary" type="reset" value="Clear" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Website</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value">www.tomorganic.com</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#websiteCollapse" data-toggle="collapse">
+                                                <p class="settings-change">Update</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="websiteCollapse">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Enter New Website:</p>
+                                                    <input type="url" name="newWebsite" id="newWebsite" style="width:280px;" required/>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <input class="btn btn-primary" type="reset" value="Clear" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Default Currency</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value">USD</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#currencyCollapse" data-toggle="collapse">
+                                                <p class="settings-change">Change</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="currencyCollapse">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Enter New Currency:</p>
+                                                    <input type="text" name="newCurrency" id="newCurrency" style="width:280px;"/>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <input class="btn btn-primary" type="reset" value="Clear" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Timezone</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value">Central Daylight Time (GMT-5:00)</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#timezoneCollapse" data-toggle="collapse">
+                                                <p class="settings-change">Change</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="timezoneCollapse">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Select New Timezone:</p>
+                                                    <input type="text" name="newTimezone" id="newTimezone" style="width:280px;"/>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <input class="btn btn-primary" type="reset" value="Clear" />
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Data Sources</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-6 col-lg-6">
+                                            <p class="settings-value">Google Analytics, PayPal, Stripe, Magento</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="configurations.html">
+                                                <p class="settings-change">Add</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </div>
+                    
+                                <!-- manage users section -->
+                                <div class="profile-tab-content">
+                                    <!-- <p class="profile-tab-header">Manage Users Settings</p> -->
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Name</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Recipient ID</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Permissions</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Actions</p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">Bill G</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">billyg@gmail.com</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">View</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#userCollapse1" data-toggle="collapse">
+                                                <p class="user-settings">Edit</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="userCollapse1">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Change Permissions:</p>
+                                                    <input type="radio" name="permissionCheck" id="viewCheck" checked="true">
+                                                        <p style="display: inline">View</p>
+                                                    </input>
+                                                    <input type="radio" name="permissionCheck" id="adminCheck" style="margin-left: 3em;">
+                                                        <p style="display: inline">Admin</p>
+                                                    </input>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <a href="#" class="deleteRef">
+                                                        <p class="user-settings">Delete User</p>
+                                                    </a>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">James Chang</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">jchange@organics.com	</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">Admin</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#userCollapse2" data-toggle="collapse">
+                                                <p class="user-settings">Edit</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="userCollapse2">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Change Permissions:</p>
+                                                    <input type="radio" name="permissionCheck" id="viewCheck">
+                                                        <p style="display: inline">View</p>
+                                                    </input>
+                                                    <input type="radio" name="permissionCheck" id="adminCheck" checked="true" style="margin-left: 3em;">
+                                                        <p style="display: inline">Admin</p>
+                                                    </input>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <a href="#" class="deleteRef">
+                                                        <p class="user-settings">Delete User</p>
+                                                    </a>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">Sam G</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">samg@gmail.com</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">View</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#userCollapse3" data-toggle="collapse">
+                                                <p class="user-settings">Edit</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="userCollapse3">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Change Permissions:</p>
+                                                    <input type="radio" name="permissionCheck" id="viewCheck">
+                                                        <p style="display: inline">View</p>
+                                                    </input>
+                                                    <input type="radio" name="permissionCheck" id="adminCheck" checked="true" style="margin-left: 3em;">
+                                                        <p style="display: inline">Admin</p>
+                                                    </input>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <a href="#" class="deleteRef">
+                                                        <p class="user-settings">Delete User</p>
+                                                    </a>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">Tan Chang</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">ichang@organics.com</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">View</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#userCollapse4" data-toggle="collapse">
+                                                <p class="user-settings">Edit</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="userCollapse4">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Change Permissions:</p>
+                                                    <input type="radio" name="permissionCheck" id="viewCheck">
+                                                        <p style="display: inline">View</p>
+                                                    </input>
+                                                    <input type="radio" name="permissionCheck" id="adminCheck" checked="true" style="margin-left: 3em;">
+                                                        <p style="display: inline">Admin</p>
+                                                    </input>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <a href="#" class="deleteRef">
+                                                        <p class="user-settings">Delete User</p>
+                                                    </a>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" 
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Adding User</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <p>Name:</p>
+                                                        <input type="text" name="newUserName" id="newUserName" 
+                                                            style="width:280px;" required/>
+                                                        <br />
+                                                        <p style="margin-top: 1em;">Recipient ID:</p>
+                                                        <input type="email" name="newUserId" id="newUserId" 
+                                                            style="width:280px;" required/>
+                                                        <br />
+                                                        <p style="margin-top: 1em;">Permissions:</p>
+                                                        <input type="radio" name="permissionCheck" id="" checked="true">
+                                                            <p style="display: inline">View</p>
+                                                        </input>
+                                                        <input type="radio" name="permissionCheck" id="" style="margin-left: 3em;">
+                                                            <p style="display: inline">Admin</p>
+                                                        </input>
+                                                        <br />
+                                                        <div class="modalBtn">
+                                                            <input class="btn btn-primary modalBtn" type="submit" value="Save" />
+                                                            <input class="btn btn-primary modalBtn" type="reset" value="Clear" />
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="userAddingButton">
+                                        <button class="btn btn-primary addingUser"
+                                        data-toggle="modal" data-target="#exampleModal">Add User</button>
+                                    </div>
+                                </div>
+
+                                <!-- notifications section -->
+                                <div class="profile-tab-content">
+                                    <!-- <p class="profile-tab-header">Notifications Settings</p> -->
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Name</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Recipient ID</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Notifications</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-head">Actions</p>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">Bill G</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">billyg@gmail.com</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">On</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#notificationCollapse1" data-toggle="collapse">
+                                                <p class="user-settings">Edit</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="notificationCollapse1">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Notifications:</p>
+                                                    <input type="checkbox" name="weeklyCheck" checked="true">
+                                                        <p style="display: inline">Weekly</p>
+                                                    </input>
+                                                    <input type="checkbox" name="monthlyCheck" checked="true" style="margin-left: 3em;">
+                                                        <p style="display: inline">Monthly</p>
+                                                    </input>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <a href="#" class="deleteRef">
+                                                        <p class="user-settings">Delete User</p>
+                                                    </a>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">James Chang</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">jchange@organics.com	</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">On</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#notificationCollapse2" data-toggle="collapse">
+                                                <p class="user-settings">Edit</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="notificationCollapse2">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Notifications:</p>
+                                                    <input type="checkbox" name="weeklyCheck">
+                                                        <p style="display: inline">Weekly</p>
+                                                    </input>
+                                                    <input type="checkbox" name="monthlyCheck" checked="true" style="margin-left: 3em;">
+                                                        <p style="display: inline">Monthly</p>
+                                                    </input>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <a href="#" class="deleteRef">
+                                                        <p class="user-settings">Delete User</p>
+                                                    </a>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">Sam G</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">samg@gmail.com</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">On</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#notificationCollapse3" data-toggle="collapse">
+                                                <p class="user-settings">Edit</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="notificationCollapse3">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Notifications:</p>
+                                                    <input type="checkbox" name="weeklyCheck">
+                                                        <p style="display: inline">Weekly</p>
+                                                    </input>
+                                                    <input type="checkbox" name="monthlyCheck" checked="true" style="margin-left: 3em;">
+                                                        <p style="display: inline">Monthly</p>
+                                                    </input>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <a href="#" class="deleteRef">
+                                                        <p class="user-settings">Delete User</p>
+                                                    </a>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">Tan Chang</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">ichang@organics.com</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <p class="settings-value">On</p>
+                                        </div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="#notificationCollapse4" data-toggle="collapse">
+                                                <p class="user-settings">Edit</p>
+                                            </a>
+                                        </div>
+                                        <div class="collapse collapseBody" id="notificationCollapse4">
+                                            <div class="card card-body">
+                                                <form>
+                                                    <p>Notifications:</p>
+                                                    <input type="checkbox" name="weeklyCheck" checked="true">
+                                                        <p style="display: inline">Weekly</p>
+                                                    </input>
+                                                    <input type="checkbox" name="monthlyCheck" style="margin-left: 3em;">
+                                                        <p style="display: inline">Monthly</p>
+                                                    </input>
+                                                    <br />
+                                                    <input class="btn btn-primary" type="submit" value="Save" />
+                                                    <a href="#" class="deleteRef">
+                                                        <p class="user-settings">Delete User</p>
+                                                    </a>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" 
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Adding User</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <p>Name:</p>
+                                                        <input type="text" name="newUserName" id="newUserName" 
+                                                            style="width:280px;" required/>
+                                                        <br />
+                                                        <p style="margin-top: 1em;">Recipient ID:</p>
+                                                        <input type="email" name="newUserId" id="newUserId" 
+                                                            style="width:280px;" required/>
+                                                        <br />
+                                                        <p style="margin-top: 1em;">Notifications:</p>
+                                                        <input type="checkbox" name="weeklyCheck" id="" checked="true">
+                                                            <p style="display: inline">Weekly</p>
+                                                        </input>
+                                                        <input type="checkbox" name="monthlyCheck" id="" style="margin-left: 3em;">
+                                                            <p style="display: inline">Monthly</p>
+                                                        </input>
+                                                        <br />
+                                                        <div class="modalBtn">
+                                                            <input class="btn btn-primary modalBtn" type="submit" value="Save" />
+                                                            <input class="btn btn-primary modalBtn" type="reset" value="Clear" />
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="userAddingButton">
+                                        <button class="btn btn-primary addingUser"
+                                        data-toggle="modal" data-target="#exampleModal2">Add User</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div><!-- /#right-panel -->
+    <!-- Right Panel -->
+
+    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <script src="assets/js/profileSettings.js"></script>
+
+</body>
+</html>

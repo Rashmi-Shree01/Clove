@@ -1,0 +1,373 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Insights</title>
+    <meta name="description" content="Essential Insights">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+    <!-- Hotjar Tracking Code for https://demo.scalend.com/insights/ -->
+    
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/scss/style.css">
+    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="assets/scss/home.css">
+    <link rel="stylesheet" href="assets/scss/configurations.css"> -->
+    <link rel="stylesheet" href="assets/scss/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <style>
+
+        .btn {
+            border: 1px solid grey;
+            font-size: 13px;
+        }
+
+        .btn:hover {
+            color: white;
+            background: #164175;
+        }
+        .newLayout {
+            font-size: 0;
+            margin-bottom: -1%;
+            margin-left: 10%;
+        }
+
+        .configCard {
+            font-size: 16px; 
+            display: inline-block;
+            margin-bottom: 8px;
+            /* width: calc(50% - 4px); */
+            margin-right: -14px;
+        }
+
+        .main-footer{
+            margin-top: 3%;
+        }
+
+        /* .configCard:nth-of-type(2n) {
+            margin-right: 0;
+        } */
+    </style>
+</head>
+<body>
+
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#"><img src="images/scalendLogoMain.png" alt="Scalend"></a>
+                <a class="navbar-brand hidden" href="#"><img src="images/scalendLogo.png" alt="Logo"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">
+                            <i class="menu-icon fa fa-home" data-toggle="tooltip" title="Home"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="trafficSnapshot.html"> 
+                            <i class="menu-icon fa fa-user" data-toggle="tooltip" title="Traffic"></i> Traffic
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales.html"> 
+                            <i class="menu-icon fa fa-line-chart" data-toggle="tooltip" title="Sales"></i> Sales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="payments.html"> 
+                            <i class="menu-icon fa fa-money" data-toggle="tooltip" title="Payments"></i> Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="customers.html"> 
+                            <i class="menu-icon fa fa-users" data-toggle="tooltip" title="Customers"></i> Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="campaigns.html"> 
+                            <i class="menu-icon fa fa-bullhorn" data-toggle="tooltip" title="Campaigns"></i> Campaigns
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#"> 
+                            <i class="menu-icon fa fa-gears" data-toggle="tooltip" title="Configurations"></i> Configurations
+                        </a>
+                    </li>
+                    <!-- /.menu-title -->
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+                <div class="header-menu">
+                    <div class="col-sm-7">
+                        <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                        <div class="page-name"> 
+                            <span>CONFIGURATIONS</span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div class="float-right logout">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-power-off" data-toggle="tooltip" title="Logout"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        </header>
+        <!-- /header -->
+        <!-- Header-->
+         
+        <!-- .content -->
+        
+        <div class="container-fluid">
+            
+            <div class="newLayout" style="margin-top: 3%;">
+                <div class="card configCard activeCard">
+                    <div class="card-body mb-0 text-center">
+                            <i class="fa fa-check" style="position: relative; left: 6.8em; bottom: 1em;"></i>
+                        <div class="source" style="margin-top: -14px;">
+                            <img src="images/logos/googleanalytics.png" alt="GoogleAdwords"
+                                style="        margin-bottom: 24%;
+                                margin-top: 26.9%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="googleadwords">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: 35px;">
+                            <img src="images/logos/googleadwords.png" alt="GoogleAnalytics" 
+                                style="    margin-bottom: 24%;
+                                margin-top: 11.6%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="googleanalytics">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: -13px;">
+                            <img src="images/logos/googleecommerce.png" alt="GoogleEcommerce"
+                                style="    margin-bottom: 26%;
+                                margin-top: 37%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="googleecommerce">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: -13px;">
+                            <img src="images/logos/facebookads.png" alt="FacebookAds"
+                                style="margin-bottom: 24%;
+                                margin-top: 33.2%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="facebookads">Connect</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newLayout">
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: 36px;">
+                            <img src="images/logos/magento.png" alt="Magento" 
+                                style="margin-bottom: 22%;
+                                margin-top: 8.3%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="magento">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                            <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: -13px;">
+                            <img src="images/logos/shopify.png" alt="Shopify" 
+                                style="margin-bottom: 21%;
+                                margin-top: 30%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="shopify">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: -13px;">
+                            <img src="images/logos/bigcommerce.png" alt="BigCommerce" 
+                                style="    margin-bottom: 23%;
+                                margin-top: 29%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="bigcommerce">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: -13px;">
+                            <img src="images/logos/woocommerce.png" alt="WooCommerce" 
+                                style="    width: 160px;
+                                margin-bottom: 19%;
+                                margin-top: 32.3%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="authorize.net">Connect</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newLayout">
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                            <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: -13px;">
+                            <img src="images/logos/paypal.png" alt="Paypal" 
+                                style= "    margin-bottom: 20%;
+                                margin-top: 35%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="paypal">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: 36px;">
+                            <img src="images/logos/stripe.png" alt="Stripe" 
+                                style="    width: 100px;
+                                margin-bottom: 17%;
+                                margin-top: 8.3%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="stripe">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: -13px;">
+                            <img src="images/logos/2checkout.png" alt="2Checkout" 
+                                style="margin-bottom: -13%;
+                                margin-top: 4%;
+                                width: 168px;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="2checkout">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: -13px;">
+                            <img src="images/logos/ccavenue.png" alt="CCAvenue" 
+                                style="margin-bottom: 23%;
+                                margin-top: 39.5%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="ccavenue">Connect</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="newLayout">
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                            <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: -13px;">
+                            <img src="images/logos/amazon.png" alt="AmazonSeller" 
+                                style="    width: 135px;
+                                margin-bottom: 15%;
+                                margin-top: 36%;"> 
+                            <br/> 
+                            <span class="btn btn-datasource" data-source="amazon">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: 36px;">
+                            <img src="images/logos/mailchimp.png" alt="MailChimp" 
+                                style="margin-bottom: 18%;
+                                margin-top: 8%;"> 
+                            <br/> 
+                            <span class="btn " data-source="mailchimp">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: -13px;">
+                            <img src="images/logos/sitegiant.png" alt="SiteGiant" 
+                                style="    width: 106px;
+                                margin-bottom: 20%;
+                                margin-top: 26%;"> 
+                            <br/> 
+                            <span class="btn  btn-datasource" data-source="sitegiant">Connect</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card configCard">
+                    <div class="card-body mb-0 text-center">
+                        <i class="fa fa-check" style="display: none;"></i>
+                        <div class="source" style="margin-top: -13px;">
+                            <img src="images/logos/journeyinsights.png" alt="JourneyInsights" 
+                                style="    margin-bottom: 19%;
+                                margin-top: 26%;"> 
+                            <br/> 
+                            <span class="btn  btn-datasource" data-source="journeyinsights">Connect</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="main-footer">
+                <div style="text-align: right">
+                    <strong>
+                        Copyright © 2018 <a href="http://www.scalend.com"><img class="footer-logo" src="images/bottomScalendLogo.png" alt="S">Scalend</a>
+                    </strong>
+                </div>
+            </footer>
+        </div>
+    </div><!-- /#right-panel -->
+    <!-- Right Panel -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    
+
+</body>
+</html>

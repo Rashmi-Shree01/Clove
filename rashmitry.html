@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drawing boxes</title>
+    </head>
+    <body>
+        <div id="Boxchart"></div>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script>
+            var data = [1,2,3],
+            color = ["#1de099","#f0d01d", "#f74316"],
+            names = ["High Sales", "Medium Sales", "Low Sales"];
+            var svg = d3.select("#Boxchart").append("svg")
+                .attr("width",600)
+                .attr("height",400);
+            var squares = svg.selectAll("rect")
+                .data(data);
+            squares.enter()
+                .append("rect")
+                .attr("x",function(d,i){
+                    return (i*170) +25;
+                })
+                .attr("y",function(d){
+                    return 25;
+                })
+                .attr("width",20)
+                .attr("height",20)
+                .attr("fill",function(d,i){
+                    return color[i];
+                });
+
+            var texts = svg.selectAll("text")
+                .data(data);
+            texts.enter()
+                .append("text")
+                .attr('x', function(d,i){
+                    return (i*170) + 55;
+                })
+                .attr('y', function(d){
+                    return 45;
+                })
+                .attr('stroke', 'black')
+                .style("font-size", 17)
+                .text(function(d,i){
+                    return names[i];
+                })
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,696 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Insights</title>
+    <meta name="description" content="Essential Insights">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+    <!-- Hotjar Tracking Code for https://demo.clove.ai/clove -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 1424267, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/scss/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="assets/js/dist/jqvmap.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="assets/scss/main.css">
+    <!-- <link rel="stylesheet" href="assets/scss/home.css">
+    <link rel="stylesheet" href="assets/scss/trafficSnapshot.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default sticky-top">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/clovelogoMain.png" alt="Clove">
+                </a>
+                <a class="navbar-brand hidden" href="#">
+                    <img src="images/cloveLogo.png" alt="C">
+                </a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="recommendations.html">
+                            <i class="menu-icon fa fa-bolt" data-toggle="tooltip" title="Recommendations"></i> Recommendations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="menu-icon fa fa-home" data-toggle="tooltip" title="Home"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales.html">
+                            <i class="menu-icon fa fa-line-chart" data-toggle="tooltip" title="Sales"></i> Sales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="payments.html">
+                            <i class="menu-icon fa fa-money" data-toggle="tooltip" title="Payments"></i> Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="trafficSnapshot.html">
+                            <i class="menu-icon fa fa-user" data-toggle="tooltip" title="Traffic"></i> Traffic
+                        </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="menu-icon fa fa-bullhorn" data-toggle="tooltip"
+                                title="Campaigns"></i>Campaigns
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <a href="campaigns.html">Summary Report</a>
+                            </li>
+                            <li>
+                                <a href="campaignPerformance.html">Performance</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="customers.html">
+                            <i class="menu-icon fa fa-users" data-toggle="tooltip" title="Customers"></i> Customers
+                        </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="menu-icon fa fa-tasks" data-toggle="tooltip" title="Advanced Reports"></i>Advanced Reports</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li class="active">
+                                <!-- <i class="menu-icon fa fa-male" data-toggle="tooltip" title="Traffic"></i> -->
+                                <a href="#">DropOff</a>
+                            </li>
+                            <li>
+                                <!-- <i class="menu-icon fa fa-area-chart" data-toggle="tooltip" title="Customer Analysis"></i> -->
+                                <a href="advanceCustomer.html">Customer</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="shoppingFeeds.html">
+                            <i class="menu-icon fa fa-shopping-cart" data-toggle="tooltip" title="Google Shopping Center"></i> Google Shopping Center
+                        </a>
+                    </li>
+                    <li>
+                        <a href="configurations.html">
+                            <i class="menu-icon fa fa-gears" data-toggle="tooltip" title="Configurations"></i> Configurations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="allDownloads.html">
+                            <i class="menu-icon fa fa-download" data-toggle="tooltip" title="Downloads"></i> Downloads
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="callRail.html"> 
+                            <i class="menu-icon fa fa-phone" data-toggle="tooltip" title="CallRail"></i> CallRail
+                        </a>
+                    </li> -->
+                    <!-- /.menu-title -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Left Panel -->
+
+    <!-- sidepanel for filters -->
+    <div id="mySidenav" class="sidenav">
+        <div class="sidebar-header">
+            <span class="filter-heading">
+                <u>Filters</u>
+            </span>
+            <a href="#" class="closebtn">&times;</a>
+        </div>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            Default Currency
+                            <i class="menu-icon fa fa-sort-down"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <div class="globalFilters" style="color: black; font-weight: 500; margin-left: 3em; height: 117px; overflow: auto"></div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="currency" value="payment" style="margin-left: -5em;">
+                                    <strong>INR</strong>
+                                    <br/>
+                                    <input type="radio" name="currency" value="payment" style="margin-left: -5em;">
+                                    <strong>USD</strong>
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header sticky-top">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left">
+                        <i class="fa fa fa-tasks"></i>
+                    </a>
+                    <div class="page-name">
+                        <span>DROPOFF</span>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <!-- <a href="http://insights.scalend.com" class="btn btn-info topButton" role="button" style="color: black; background: #ffa500;border-color: #ffa500;">
+                        Start Your Free Trial
+                    </a> -->
+                    <div class="row timeline-row">
+                        <div class="multi-sel">
+                            <select class="form-selector time-range">
+                                <option th:text="#{header.yesterday}">Yesterday</option>
+                                <option th:text="#{header.thisweek}">This Week</option>
+                                <option th:text="#{header.lastweek}">Last week</option>
+                                <option th:text="#{header.thismonth}" selected="true">This Month</option>
+                                <option th:text="#{header.lastmonth}">Last month</option>
+                                <option>Last 6 month</option>
+                                <option th:text="#{header.year}">Year</option>
+                            </select>
+                        </div>
+
+                        <div class="dropdown float-right">
+                            <div class="header-left config">
+                                <a href="#">
+                                    <i class="menu-icon fa fa-filter" id="disabledFilter"></i>
+                                    <!-- <i class="menu-icon fa fa-gears" data-toggle="tooltip" title="Configurations"></i> -->
+                                </a>
+                            </div>
+                            <!-- <button class="btn btn-info" id="filterNav">+</button> -->
+                        </div>
+
+                        <div class="float-right logout">
+                            <a class="nav-link" href="page-login.html">
+                                <i class="fa fa-power-off" data-toggle="tooltip" title="Logout"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /header -->
+        <!-- Header-->
+
+        <!-- .content -->
+
+        <div class="container-fluid">
+
+            <!-- first row starts here -->
+            <div class="row first-row">
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- total visits card -->
+                    <div class="card total-visits-card">
+                        <div class="card-body pb-0">
+                            <div class="visitors">
+                                <p id="totalVisits">
+                                    <strong id="totalVisitsTraffic">8596</strong>
+                                </p>
+                                <p id="totalVisitTrend"> 0.25%
+                                    <i class="up-trend-icon fa fa-arrow-up trend-icons"></i>
+                                </p>
+                            </div>
+                            <p class="traffic-card-title">Total Page Views
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-original-title="Total Page Views" data-html="true"
+                                        data-trigger="hover" data-content="Total Page Views"></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- sessions card -->
+                    <div class="card sessions-card">
+                        <div class="card-body pb-0">
+                            <div class="sessions">
+                                <p id="totalSessions">
+                                    <strong id="totalSessionsTraffic">7469</strong>
+                                </p>
+                                <p id=sessionTrend> 0.25%
+                                    <i class="down-trend-icon fa fa-arrow-down trend-icons"></i>
+                                </p>
+                            </div>
+                            <p class="traffic-card-title">Total Visits
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-original-title="Total Visits" data-html="true"
+                                        data-trigger="hover" data-content="Total Visits"></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- pages/sessions card -->
+                    <div class="card pages-per-sessions-card">
+                        <div class="card-body pb-0">
+                            <div class="pagesPerSessions">
+                                <p id="totalPagesPerSessions">
+                                    <strong id="totalPagesPerSessionsTraffic">5%</strong>
+                                </p>
+                                <p id="pagesPerSessionTrend"> 0.25%
+                                    <i class="up-trend-icon fa fa-arrow-up trend-icons"></i>
+                                </p>
+                            </div>
+                            <p class="traffic-card-title">Bounce Rate
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-original-title="Bounce Rate" data-html="true"
+                                        data-trigger="hover" data-content="Bounce Rate"></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- conversions card -->
+                    <div class="card conversions-card">
+                        <div class="card-body pb-0">
+                            <div class="conversions">
+                                <p id="totalConversions">
+                                    <strong id="totalConversionsAdvTraffic">5%</strong>
+                                </p>
+                                <p id="conversionTrend"> 20%
+                                    <i class="up-trend-icon fa fa-arrow-up trend-icons"></i>
+                                </p>
+                            </div>
+                            <p class="traffic-card-title">Conversions
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-original-title="Conversions" data-html="true"
+                                        data-trigger="hover" data-content="Conversions"></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- second row starts here -->
+            <!-- <div class="row">
+                <div class="col-sm-6 col-md-12 col-lg-6">
+                    <div class="card recommendation-card">
+                        <div class="card-body pb-0">
+                            <div class="recommendation">
+                                <div class="recommendation-icon">
+                                    <i class="fa fa-bolt"></i>
+                                </div>
+                                <div class="recommendation-text">
+                                    <p>Your Bounce Rate has increased by 2%. </p>
+                                    <span>The landing page /promo1.html needs to change.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- third row starts here -->
+            <div class="row">
+                <!-- conversion funnel -->
+                <div class="col-sm-12 col-md-6 col-lg-9">
+                    <div class="card conversion-card">
+                        <div class="class-header">
+                            <div class="card-body pb-0">
+                                <div class="advTrafficOptions">
+                                    <div class="advTrafficSelectors">
+                                        <label class="labels">Product Category:</label>
+                                        <select class="advancedSelectors" id="advTrafficCategorySelector">
+                                            <option selected="true">Designer-Men</option>
+                                            <option>Designer-Women</option>
+                                            <option>Shirts</option>
+                                            <option>Kurta</option>
+                                            <option>Gowns</option>
+                                            <option>Jackets</option>
+                                        </select>
+                                    </div>
+                                    <div class="advTrafficSelectors">
+                                        <label class="labels">Referral Page:</label>
+                                        <select class="advancedSelectors" id="advTrafficReferralSelector">
+                                            <option selected="true">../facebook.com</option>
+                                            <option>../google.com</option>
+                                            <option>../bing.com</option>
+                                        </select>
+                                    </div>
+                                    <div class="advTrafficSelectors">
+                                        <label class="labels">Landing Page:</label>
+                                        <select class="advancedSelectors" id="advTrafficLandingSelector">
+                                            <option selected="true">../springlaunch</option>
+                                            <option>../summers</option>
+                                            <option>../men/shirts</option>
+                                            <option>../women/saris</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <p class="title-for-card">Conversion Funnel
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-original-title="Conversion Funnel" data-html="true"
+                                            data-trigger="hover" data-content="Conversion Funnel"></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-body pb-0">
+                            <div class="conversionFunnel">
+                                <canvas id="conversionChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--devices and cities-->
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!--devices card-->
+                    <div class="card devices-card advanceDevices">
+                        <div class="class-header">
+                            <div class="card-body pb-0">
+                                <p class="title-for-card">Device Sessions
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-original-title="Device Sessions" data-html="true"
+                                            data-trigger="hover" data-content="Device specific sessions for the selected timeline."></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-body pb-0">
+                            <ul class="deviceList">
+                                <li>
+                                    <div class="text-muted">
+                                        <i class="card-icon-left fa fa-laptop"></i>
+                                    </div>
+                                    <strong id="computerSession" class="device-padding">12.02%</strong>
+                                </li>
+                                <li>
+                                    <div class="text-muted">
+                                        <i class="card-icon-left fa fa-tablet"></i>
+                                    </div>
+                                    <strong id="tabletSessions" class="device-padding">2.29%</strong>
+                                </li>
+                                <li>
+                                    <div class="text-muted">
+                                        <i class="card-icon-left fa fa-mobile"></i>
+                                    </div>
+                                    <strong id="returningCustomers" class="device-padding">85.69%</strong>
+                                </li>
+                            </ul>
+                            <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated progress-bar-color-1" role="progressbar" style="width: 12.02%"
+                                    aria-valuenow="12.02" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated progress-bar-color-2" role="progressbar" style="width: 2.29%"
+                                    aria-valuenow="2.29" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated progress-bar-color-3" role="progressbar" style="width: 85.69%"
+                                    aria-valuenow="85.69" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--location card-->
+                    <div class="card advanceLocation">
+                        <div class="class-header">
+                            <div class="card-body pb-0">
+                                <p class="title-for-card">Top 5 Locations
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-original-title="Locations" data-html="true"
+                                            data-trigger="hover" data-content="Top 5 locations by sales."></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-body pb-0">
+                            <div class="location-chart-container">
+                                <canvas id="locationChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--fourth row starts here -->
+            <div class="row">
+                <!-- dropoff table -->
+                <div class="col-sm-6 col-md-12 col-lg-12">
+                    <div class="card dropOffTable-card">
+                        <div class="class-header">
+                            <div class="card-body pb-0">
+                                <div class="float-right">
+                                    <div class="advTrafficOptions">
+                                        <div class="advTrafficSelectorsTwo">
+                                            <i id="dropOffDownload" class="fa fa-download" aria-hidden="true" style="display:none"></i>
+                                            <label class="labels">User Type:</label>
+                                            <select class="advancedUserSelectors" id="advTrafficUserSelector">
+                                                <option selected="true">Guest</option>
+                                                <option>Anonymous</option>
+                                                <option>Registered</option>
+                                            </select>
+                                        </div>
+                                        <div class="advTrafficSelectorsTwo">
+                                            <select class="advancedDropoffSelectors" id="dropOffSelection">
+                                                <option selected="true">DropOff_@ViewProduct</option>
+                                                <option>DropOff_@AddToCart</option>
+                                                <option>DropOff_@RemoveCart</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="stageSelector">
+                                        <select class="form-selector salesSelector">
+                                            <option selected="true">Select Stage</option>
+                                            <option>Add to Cart</option>
+                                            <option>Remove from Cart</option>
+                                            <option>Page Views</option>
+                                        </select>
+                                    </div> -->
+                                </div>
+                                <p class="title-for-card">Drop-Off Details
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-original-title="Drop-Off Details" data-html="true"
+                                            data-trigger="hover" data-content="Drop-Off Details"></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-body pb-0">
+                            <div class="data-for-dropOff" style="margin-bottom: 0.5rem">
+                                <table id="dropOffTable" data-page-length="5" class="table table-bordered table-responsive table-hover" style="width: 100%">
+                                    <tbody>
+                                        <thead style="font-size: 14px; text-align: center">
+                                            <tr class="bg-table-head">
+                                                <th>User</th>
+                                                <th>Visit Count</th>
+                                                <th>Page Visited</th>
+                                                <th>Date</th>
+                                                <th>Referrer Page</th>
+                                                <th>Landing Page</th>
+                                                <th>Device/OS</th>
+                                                <th>User Type</th>
+                                            </tr>
+                                        </thead>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fifth row starts here -->
+            <div class="row">
+                <!--referral source table-->
+                <div class="col-sm-6 col-md-12 col-lg-12">
+                    <div class="card dropOffTable-card">
+                        <div class="class-header">
+                            <div class="card-body pb-0">
+                                <div class="float-right">
+                                    <div class="advTrafficOptions">
+                                        <div class="advTrafficSelectorsTwo">
+                                            <i id="dropOffDownload" class="fa fa-download" aria-hidden="true" style="display: none"></i>
+                                            <label class="labels">User Type:</label>
+                                            <select class="advancedUserSelectorsTwo" id="advTrafficUserSelector">
+                                                <option selected="true">Guest</option>
+                                                <option>Anonymous</option>
+                                                <option>Registered</option>
+                                            </select>
+                                        </div>
+                                        <div class="advTrafficSelectorsTwo">
+                                            <select class="advancedStageSelectors" id="referralSourceStage">
+                                                <option selected="true">Bounced</option>
+                                                <option>NonBounced</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="stageSelector">
+                                        <select class="form-selector salesSelector">
+                                            <option selected="true">Select Option</option>
+                                            <option>Checkout</option>
+                                            <option>Dropoff</option>
+                                        </select>
+                                    </div> -->
+                                </div>
+                                <p class="title-for-card">Referral Source Journey
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-original-title="Referral Source Journey"
+                                            data-html="true" data-trigger="hover" data-content="Referral Source Journey"></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-body pb-0">
+                            <div class="data-for-dropOff" style="margin-bottom: 0.5rem">
+                                <table id="dropOffTable2" data-page-length="5" class="table table-bordered table-hover" style="width: 100%;">
+                                    <tbody>
+                                        <thead style="font-size: 14px; text-align: center">
+                                            <tr class="bg-table-head">
+                                                <th>Marketing Medium</th>
+                                                <th>Marketing Source</th>
+                                                <th>Marketing Campaign</th>
+                                                <th>Landing Page</th>
+                                                <th>Page Before Exit</th>
+                                                <th>Exit Page</th>
+                                                <th>Count of Visitors</th>
+                                            </tr>
+                                        </thead>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--sixth row starts here -->
+            <div class="row">
+                <!-- successful checkouts table -->
+                <div class="col-sm-6 col-md-12 col-lg-12">
+                    <div class="card dropOffTable-card">
+                        <div class="class-header">
+                            <div class="card-body pb-0">
+                                <div class="float-right">
+                                    <!-- <div class="stageSelector">
+                                        <select class="form-selector salesSelector">
+                                            <option selected="true">Drop-Off Stages</option>
+                                            <option>Add to Cart</option>
+                                            <option>Remove from Cart</option>
+                                            <option>Page Views</option>
+                                        </select>
+                                    </div> -->
+                                </div>
+                                <p class="title-for-card">Successful Checkouts
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom" data-original-title="Successful Checkouts" data-html="true"
+                                            data-trigger="hover" data-content="Successful Checkouts"></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-body pb-0">
+                            <div class="data-for-dropOff" style="margin-bottom: 0.5rem">
+                                <table id="checkoutsTable" data-page-length="5" class="table table-bordered table-hover" style="width: 100%">
+                                    <tbody>
+                                        <thead style="font-size: 14px; text-align: center">
+                                            <tr class="bg-table-head">
+                                                <th>User Email</th>
+                                                <th>No. of Visits</th>
+                                                <th>Pages Visited</th>
+                                                <th>Purchase Date</th>
+                                                <th>First Referrer</th>
+                                                <th>Current Referrer Page</th>
+                                                <th>Device</th>
+                                            </tr>
+                                        </thead>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="main-footer">
+                <div style="text-align: right">
+                    <strong>
+                        Copyright © 2019
+                        <a href="http://www.clove.ai" target="_blank">
+                            <img class="footer-logo" src="images/bottomCloveLogo.jpg" alt="C">Clove</a>
+                    </strong>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+    <!-- /#right-panel -->
+    <!-- Right Panel -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/advanceTraffic.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+
+</body>
+
+</html>

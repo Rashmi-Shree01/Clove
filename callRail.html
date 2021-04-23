@@ -1,0 +1,410 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Insights</title>
+    <meta name="description" content="Essential Insights">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/scss/style.css">
+    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="assets/scss/home.css">
+    <link rel="stylesheet" href="assets/scss/callRail.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">Scalend</a>
+                <a class="navbar-brand hidden" href="#"><img src="images/scalendLogo.png" alt="Logo"></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">
+                            <i class="menu-icon fa fa-home" data-toggle="tooltip" title="Home"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="trafficSnapshot.html"> 
+                            <i class="menu-icon fa fa-user" data-toggle="tooltip" title="Traffic"></i> Traffic
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"> 
+                            <i class="menu-icon fa fa-line-chart" data-toggle="tooltip" title="Sales"></i> Sales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="payments.html"> 
+                            <i class="menu-icon fa fa-money" data-toggle="tooltip" title="Payments"></i> Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="customers.html"> 
+                            <i class="menu-icon fa fa-users" data-toggle="tooltip" title="Customers"></i> Customers
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="callRail.html"> 
+                            <i class="menu-icon fa fa-phone" data-toggle="tooltip" title="CallRail"></i> CallRail
+                        </a>
+                    </li>
+                    <!-- /.menu-title -->
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+                <div class="header-menu">
+                    <div class="col-sm-7">
+                        <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                        <div class="page-name"> 
+                            <span>CallRail</span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div class="float-right logout">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-power-off" data-toggle="tooltip" title="Logout"></i>
+                            </a>
+                        </div>
+                        <div class="dropdown float-right">
+                            <div class="header-left config">
+                                <a href="configurations.html"> 
+                                    <i class="menu-icon fa fa-gears" data-toggle="tooltip" title="Configurations"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="float-right multi-sel">
+                            <select class="form-selector time-range salesPage">
+                                <option th:text="#{header.yesterday}" selected="true">Yesterday</option>
+                                <option th:text="#{header.thisweek}">This Week</option>
+                                <option th:text="#{header.lastweek}">Last week</option>
+                                <option th:text="#{header.thismonth}">This Month</option>
+                                <option th:text="#{header.lastmonth}">Last month</option>
+                                <option>Last 6 month</option>
+                                <option th:text="#{header.year}">Year</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+        </header>
+        <!-- /header -->
+        <!-- Header-->
+         
+        <!-- .content -->
+        
+        <div class="container-fluid">
+            
+            <!-- first row starts here -->
+            <div class="row first-row">
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- total calls card -->
+                    <div class="card total-calls-card">
+                        <div class="card-body pb-0">
+                            <div class="totalCalls">
+                                <p id="totalCallsDone"><strong>45</strong></p>
+                                <p id="totalCallsDoneTrend"> 0.25% 
+                                    <i class="up-trend-icon fa fa-arrow-up trend-icons"></i> 
+                                </p>
+                            </div>
+                            <p class="calls-card-title" style="margin-top: -11px"> Total Calls
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                        data-original-title="Total Calls"
+                                        data-content="Information"></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- avg calls per day card -->
+                    <div class="card avgCalls-card">
+                        <div class="card-body pb-0">
+                            <div class="avgCalls">
+                                <p id="avgCallsPerDay"><strong>5</strong></p>
+                                <p id=avgCallsPerDayTrend> 0.25% 
+                                    <i class="down-trend-icon fa fa-arrow-down trend-icons"></i> 
+                                </p>
+                            </div>
+                            <p class="calls-card-title" style="margin-top: -11px">Avg Calls/Day
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                        data-original-title="Avg Calls/Day"
+                                        data-content="Information"></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- calls by landing page card -->
+                    <div class="card landing-page-card">
+                        <div class="card-body pb-0">
+                            <div class="landingPageCallsHere">
+                                <p id="landingPageCalls"><strong>30</strong></p>
+                                <p id="landingPageCallsTrend"> 0.25% 
+                                    <i class="up-trend-icon fa fa-arrow-up trend-icons"></i> 
+                                </p>
+                            </div>
+                            <p class="calls-card-title" style="margin-top: -11px">By Landing Page
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                        data-original-title="By Landing Page"
+                                        data-content="Information"></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- avg time to first call card -->
+                    <div class="card first-call-card">
+                        <div class="card-body pb-0">
+                            <div class="firstCallHere">
+                                <p id="avgTimeFirstCall"><strong>1m 20sec</strong></p>
+                                <p id="avgTimeFirstCallTrend"> 0.25% 
+                                    <i class="down-trend-icon fa fa-arrow-down trend-icons"></i> 
+                                </p>
+                            </div>
+                            <p class="calls-card-title" style="margin-top: -11px">Avg Time to First Call
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                        data-original-title="Avg Time to First Call"
+                                        data-content="Information"></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- third row starts here -->
+            <div class="row">
+
+                <!-- calls chart card -->
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="card calls-chart-card">
+                        <div class="class-header">
+                            <div class="card-body pb-0">
+                                <div class="float-right">
+                                    <button class="btn btn-toggle" id="currentBarChart"> 
+                                        <i class="fa fa-bar-chart"></i>
+                                    </button>
+                                    <button class="btn btn-light" id="currentTrendChart"> 
+                                        <i class="fa fa-line-chart"></i>
+                                    </button>
+                                </div>
+                                <p class="title-for-card">Calls
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                            data-original-title="Calls"
+                                            data-content="Information"></i>
+                                    </small>
+                                </p>
+                            </div>
+                            <hr/>
+                        </div>
+                        <div class="card-body pb-0">
+                            <div class="callsBar">
+                                <canvas id="callsBarChart"></canvas>
+                            </div>
+                            <div class="callsTrend" style="display: none">
+                                <canvas id="callsTrendChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- calls pie chart -->
+                 <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="card calls-pie-card">
+                        <div class="class-header">
+                            <div class="card-body pb-0">
+                                <p class="title-for-card">Percentage Calls
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                            data-original-title="Percentage Calls"
+                                            data-content="Information"></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-body pb-0">
+                            <div class="calls-pie-container">
+                                <canvas id="callsPieChart" width="700" height="350"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- fifth row starts here -->
+            <div class="row">
+
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="card brands-card">
+                        <div class="class-header" style="margin-top: -9px">
+                            <div class="card-body pb-0">
+                                <p class="title-for-card" style="margin-top: 6px">Table
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                            data-original-title="Table"
+
+                                            data-content="Information"></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr style="margin-top: -2px">
+                        <div class="card-body pb-0">
+                            <table class="table table-responsive-md table-bordered table-hover table-fixed" 
+                                id="bestSellerSales" style="width: 100%">
+                                <tbody>
+                                    <thead style="font-size: 100%">
+                                        <tr class="bg-table-head" style="text-align: center">
+                                            <th>Source</th>
+                                            <th>Total Calls</th>
+                                            <th>First Time Callers</th>
+                                            <th>Average Duration</th>
+                                            <th>Leads</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td>Direct</td>
+                                        <td>6</td>
+                                        <td>19</td>
+                                        <td>1m 51s</td>
+                                        <td>1024</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Google Paid</td>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td>1m 23s</td>
+                                        <td>1112</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Google Organic</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>1m 13s</td>
+                                        <td>999</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="card brands-card">
+                        <div class="class-header"style="margin-top: -9px">
+                            <div class="card-body pb-0">
+                                <p class="title-for-card" style="margin-top: 6px">Table
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                            data-original-title="Table"
+                                            data-content="Information"></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr style="margin-top: -2px;">
+                        <div class="card-body pb-0">
+                            <table class="table table-responsive-md table-bordered table-hover table-fixed" 
+                                id="returnSales" data-page-length="5" style="width: 100%">
+                                <tbody>
+                                    <thead style="font-size: 100%">
+                                        <tr class="bg-table-head" style="text-align: center">
+                                            <th>Tracking No.</th>
+                                            <th>Source</th>
+                                            <th>Start Time</th>
+                                            <th>Duration</th>
+                                            <th>Caller</th>
+                                        </tr>
+                                        <tr>
+                                            <td>281-947-3789</td>
+                                            <td>Google Paid</td>
+                                            <td>2/22 9:44am</td>
+                                            <td>20s</td>
+                                            <td>Complete Landsc</td>
+                                        </tr>
+                                        <tr>
+                                            <td>281-853-8403</td>
+                                            <td>Direct</td>
+                                            <td>2/22 9:17am</td>
+                                            <td>1m 23s</td>
+                                            <td>Crystal Mitcham</td>
+                                        </tr>
+                                        <tr>
+                                            <td>281-956-8524</td>
+                                            <td>Google Paid</td>
+                                            <td>2/22 8:41am</td>
+                                            <td>1m 22s</td>
+                                            <td>Houston, TX</td>
+                                        </tr>
+                                    </thead>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="main-footer">
+                <div style="text-align: right">
+                    <strong>
+                            Copyright © 2017 <a href="http://www.scalend.com"><img class="footer-logo" src="images/scalendLogo.png" alt="S">Scalend</a>
+                    </strong>
+                </div>
+            </footer>
+        </div>
+    </div><!-- /#right-panel -->
+    <!-- Right Panel -->
+
+    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/callRail.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    
+    <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+
+</body>
+</html>

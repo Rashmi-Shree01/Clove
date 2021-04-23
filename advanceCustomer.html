@@ -1,0 +1,688 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Insights</title>
+    <meta name="description" content="Essential Insights">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+    <!-- Hotjar Tracking Code for https://demo.clove.ai/clove -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 1424267, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/scss/style.css">
+    <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="assets/scss/home.css">
+    <link rel="stylesheet" href="assets/scss/customer.css"> -->
+    <link rel="stylesheet" href="assets/scss/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default sticky-top">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/clovelogoMain.png" alt="Clove">
+                </a>
+                <a class="navbar-brand hidden" href="#">
+                    <img src="images/cloveLogo.png" alt="C">
+                </a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="recommendations.html">
+                            <i class="menu-icon fa fa-bolt" data-toggle="tooltip" title="Recommendations"></i>
+                            Recommendations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="menu-icon fa fa-home" data-toggle="tooltip" title="Home"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sales.html">
+                            <i class="menu-icon fa fa-line-chart" data-toggle="tooltip" title="Sales"></i> Sales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="payments.html">
+                            <i class="menu-icon fa fa-money" data-toggle="tooltip" title="Payments"></i> Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="trafficSnapshot.html">
+                            <i class="menu-icon fa fa-user" data-toggle="tooltip" title="Traffic"></i> Traffic
+                        </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="menu-icon fa fa-bullhorn" data-toggle="tooltip"
+                                title="Campaigns"></i>Campaigns
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <a href="campaigns.html">Summary Report</a>
+                            </li>
+                            <li>
+                                <a href="campaignPerformance.html">Performance</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="menu-icon fa fa-truck" data-toggle="tooltip"
+                                title="Shipping Reports"></i>Shipping Reports
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <a href="trackingReport.html">Shipping Report</a>
+                            </li>
+                            <li>
+                                <a href="shippingCod.html">COD Report</a>
+                            </li>
+                            <li>
+                                <a href="shippingDetails.html">Shipment Details</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="customers.html">
+                            <i class="menu-icon fa fa-address-card" data-toggle="tooltip" title="Customers"></i>
+                            Customers
+                        </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="menu-icon fa fa-tasks" data-toggle="tooltip" title="Advanced Reports"></i>Advanced
+                            Reports</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <!-- <li>
+                                                                                <a href="advanceTraffic.html">DropOff</a>
+                                                                            </li> -->
+                            <li class="active">
+                                <!-- <i class="menu-icon fa fa-area-chart" data-toggle="tooltip" title="Customer Analysis"></i> -->
+                                <a href="#">Customer</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="menu-icon fa fa-users" data-toggle="tooltip" title="Advanced Traffic"></i>Advanced
+                            Traffic</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                                <a href="summary.html">Summary</a>
+                            </li>
+                            <li>
+                                <a href="conversions.html">Conversions</a>
+                            </li>
+                            <li>
+                                <a href="journey.html">Journey</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="shoppingFeeds.html">
+                            <i class="menu-icon fa fa-shopping-cart" data-toggle="tooltip"
+                                title="Google Shopping Center"></i> Google Shopping Center
+                        </a>
+                    </li>
+                    <li>
+                        <a href="configurations.html">
+                            <i class="menu-icon fa fa-gears" data-toggle="tooltip" title="Configurations"></i>
+                            Configurations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="allDownloads.html">
+                            <i class="menu-icon fa fa-download" data-toggle="tooltip" title="Downloads"></i> Downloads
+                        </a>
+                    </li>
+                    <!-- <li>
+                                                                        <a href="callRail.html"> 
+                                                                            <i class="menu-icon fa fa-phone" data-toggle="tooltip" title="CallRail"></i> CallRail
+                                                                        </a>
+                                                                    </li> -->
+                    <!-- /.menu-title -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Left Panel -->
+
+    <!-- sidepanel for filters -->
+    <div id="mySidenav" class="sidenav">
+        <div class="sidebar-header">
+            <span class="filter-heading">
+                <u>Filters</u>
+            </span>
+            <a href="#" class="closebtn">&times;</a>
+        </div>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            Default Currency
+                            <i class="menu-icon fa fa-sort-down"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <div class="globalFilters"
+                                        style="color: black; font-weight: 500; margin-left: 3em; height: 117px; overflow: auto">
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="radio" name="currency" value="payment" style="margin-left: -5em;">
+                                    <strong>INR</strong>
+                                    <br />
+                                    <input type="radio" name="currency" value="payment" style="margin-left: -5em;">
+                                    <strong>USD</strong>
+                                    <br />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header sticky-top">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left">
+                        <i class="fa fa fa-tasks"></i>
+                    </a>
+                    <div class="page-name">
+                        <span>CUSTOMER SEGMENTS</span>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <!-- <a href="http://insights.scalend.com" class="btn btn-info topButton" role="button" style="color: black; background: #ffa500;border-color: #ffa500;">
+                            Start Your Free Trial
+                        </a> -->
+                    <div class="row timeline-row">
+                        <div class="multi-sel">
+                            <select class="form-selector time-range">
+                                <option th:text="#{header.yesterday}">Yesterday</option>
+                                <option th:text="#{header.thisweek}">This Week</option>
+                                <option th:text="#{header.lastweek}">Last week</option>
+                                <option th:text="#{header.thismonth}" selected="true">This Month</option>
+                                <option th:text="#{header.lastmonth}">Last month</option>
+                                <option>Last 6 month</option>
+                                <option th:text="#{header.year}">Year</option>
+                            </select>
+                        </div>
+
+                        <div class="dropdown float-right">
+                            <div class="header-left config">
+                                <a href="#">
+                                    <i class="menu-icon fa fa-filter" id="filterNav"></i>
+                                    <!-- <i class="menu-icon fa fa-gears" data-toggle="tooltip" title="Configurations"></i> -->
+                                </a>
+                            </div>
+                            <!-- <button class="btn btn-info" id="filterNav">+</button> -->
+                        </div>
+
+                        <div class="float-right logout">
+                            <a class="nav-link" href="page-login.html">
+                                <i class="fa fa-power-off" data-toggle="tooltip" title="Logout"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /header -->
+        <!-- Header-->
+
+        <!-- .content -->
+
+        <div id="customerPage" class="container-fluid">
+
+            <!-- first row starts here -->
+            <div class="row first-row">
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- total customers card -->
+                    <div class="card total-customers-card">
+                        <div class="card-body pb-0">
+                            <div class="customers">
+                                <p id="totalCustomers">
+                                    <strong id="totalCustomersHere">12,000</strong>
+                                </p>
+                                <p id="totalCustomerTrend"> 20%
+                                    <i class="up-trend-icon fa fa-arrow-up trend-icons"></i>
+                                </p>
+                            </div>
+                            <p class="customer-card-title">Total Customers
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                        data-original-title="Total Customers" data-html="true" data-trigger="hover"
+                                        data-content="Total Customer count for the selected timeline"></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- avg ltv card -->
+                    <div class="card avg-ltv-card">
+                        <div class="card-body pb-0">
+                            <div class="avg-ltv">
+                                <p id="repeatCustomer">
+                                    <strong id="repeatCustomerAdvance">500</strong>
+                                </p>
+                                <p id=repeatCustomerTrend> 20%
+                                    <i class="up-trend-icon fa fa-arrow-up trend-icons"></i>
+                                </p>
+                            </div>
+                            <p class="customer-card-title">Repeat Customer
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                        data-original-title="Repeat Customer" data-html="true" data-trigger="hover"
+                                        data-content="Number of customers who have visited again"></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- top 20% customers card -->
+                    <div class="card avg-orders-card">
+                        <div class="card-body pb-0">
+                            <div class="avg-orders">
+                                <p id="topCustomers">
+                                    <strong id="topCustomersAdvance">$10,000</strong>
+                                </p>
+                                <p id="topCustomersTrend"> 20%
+                                    <i class="down-trend-icon fa fa-arrow-down trend-icons"></i>
+                                </p>
+                            </div>
+                            <p class="customer-card-title">Top 20% Customers
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                        data-original-title="Top 20% Customers" data-html="true" data-trigger="hover"
+                                        data-content="Revenue from top 20% of the customers "></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <!-- avg ltv card -->
+                    <div class="card avg-ltv-card">
+                        <div class="card-body pb-0">
+                            <div class="avg-ltv">
+                                <p id="avgLtvAdvance">
+                                    <strong id="avgLtvAdvanceCustomer">$250.50</strong>
+                                </p>
+                                <p id=avgLtvAdvanceTrend> 13.63%
+                                    <i class="up-trend-icon fa fa-arrow-up trend-icons"></i>
+                                </p>
+                            </div>
+                            <p class="customer-card-title">Avg LTV
+                                <small>
+                                    <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                        data-original-title="Average LTV" data-html="true" data-trigger="hover"
+                                        data-content="Average Life time Value of all customers for the selected timeline"></i>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- second row starts here -->
+            <!-- <div class="row">
+                <div class="col-sm-6 col-md-12 col-lg-6">
+                    recommendation card 
+                    <div class="card recommendation-card">
+                        <div class="card-body pb-0">
+                            <div class="recommendation">
+                                <div class="recommendation-icon">
+                                    <i class="fa fa-bolt"></i>
+                                </div>
+                                <div class="recommendation-text">
+                                    <p>Cart abandonment high during peak hour sale</p>
+                                    <span>20% increase in drop-offs at checkout page</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- bootstrap modal for showing intervention strategy -->
+            <div class="modal" tabindex="-1" role="dialog" id="interventionModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Intervention Strategy</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-bordered table-hover" id="interventionTable">
+                                <thead class="bg-table-head">
+                                    <tr>
+                                        <th>Segment</th>
+                                        <th>Intervention Strategy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Champions</td>
+                                        <td>1. Reward these customers. Example: Gift Coupons
+                                            <br /> 2. New product recommendations: They can become early adopters for
+                                            new products
+                                            and will help promote your brand.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Loyalists</td>
+                                        <td>1. Offer membership or loyalty programs
+                                            <br /> 2. Recommend related products to upsell them and help them become
+                                            your Champions.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>New Customers</td>
+                                        <td>1. Start building relationship with these customers by providing onboarding
+                                            support
+                                            <br /> 2. Special offers to increase their visits.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cannot Lose Them</td>
+                                        <td>1. Send them personalized reactivation campaigns to reconnect on the basis
+                                            of their
+                                            specific preferences, as known from earlier transaction data.
+                                            <br /> 2. Product recommendations
+                                            <br /> 3. Customer Experience Survey: Run surveys to find out what went
+                                            wrong and avoid
+                                            losing them to a competitor.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>About to Churn</td>
+                                        <td>1. This group may not be high priority in engaging through promotions to
+                                            improve
+                                            sales.
+                                            <br /> 2. Send them personalized reactivation campaigns to reconnect.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Churned out Customers</td>
+                                        <td>1. This group may not be high priority in engaging through promotions to
+                                            improve
+                                            sales.
+                                            <br /> 2. Communicate with them on the basis of their specific preferences,
+                                            as known
+                                            from earlier transaction data.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- third row starts here -->
+            <div class="row">
+                <!-- rfm card -->
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="card rfmCard">
+                        <div class="class-header">
+                            <div class="card-body pb-0">
+                                <p class="title-for-card">Customer Segmentation for Order Data
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                            data-original-title="Customer Segments" data-html="true"
+                                            data-trigger="hover"
+                                            data-content="Count of Customers in different segments based on their average purchase, last visit time"></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-body pb-0">
+                            <div class="row">
+                                <!-- loss making campaigns card -->
+                                <div class="col-sm-6 col-md-12 col-lg-6">
+                                    <div class="card">
+                                        <div class="class-header">
+                                            <div class="card-body pb-0">
+                                                <p class="title-for-card">Customer Segments
+                                                    <small>
+                                                        <i class="fa fa-info-circle" data-toggle="popover"
+                                                            data-placement="right"
+                                                            data-original-title="Customer Segments" data-html="true"
+                                                            data-trigger="hover"
+                                                            data-content="&lt;b&gt;Champions&lt;/b&gt; are your most valuable repeat customers who bought most recently and most often.&lt;br/&gt;
+                                                                                  &lt;b&gt;Loyalists&lt;/b&gt; are your repeat customers with average frequency and relatively recent purchase history.&lt;br/&gt;
+                                                                                  &lt;b&gt;New Customers&lt;/b&gt; are the customers who have recently become your customers.&lt;br/&gt;
+                                                                                  &lt;b&gt;Cannot Lose Them&lt;/b&gt; are customers who used to visit and purchase quite often, but have not been visiting recently.&lt;br/&gt;
+                                                                                  &lt;b&gt;About to Churn&lt;/b&gt; customers made low to medium value purchase and do not purchase frequently. They have not been visiting recently.&lt;br/&gt; 
+                                                                                  &lt;b&gt;Churned Out customers&lt;/b&gt; stopped transacting a long time ago.&lt;br/&gt;"></i>
+                                                    </small>
+                                                </p>
+                                                <!-- <p class="title-for-card" data-toggle="modal" id="interventionStrategy" data-target="#interventionModal">Intervention Strategy
+                                                    <small>
+                                                        <i class="fa fa-info-circle"></i>
+                                                    </small>
+                                                </p> -->
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="card-body pb-0">
+                                            <div>
+                                                <canvas id="customerSegment"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- profitable campaigns card -->
+                                <div class="col-sm-6 col-md-12 col-lg-6">
+                                    <div class="card">
+                                        <div class="class-header">
+                                            <div class="card-body pb-0">
+                                                <div class="driftSelector">
+                                                    <select class="form-selector salesSelector"
+                                                        id="customerDriftSelector"
+                                                        style="width: 26%; position: absolute; right: 3%;">
+                                                        <option selected="true">About to Churn</option>
+                                                        <option>Loyalists</option>
+                                                        <option>New Customers</option>
+                                                        <option>Champions</option>
+                                                        <option>Cannot Lose Them</option>
+                                                        <option>Churned Out Customers</option>
+                                                    </select>
+                                                </div>
+                                                <p class="title-for-card">Customer Drift
+                                                    <small>
+                                                        <i class="fa fa-info-circle" data-toggle="popover"
+                                                            data-placement="bottom"
+                                                            data-original-title="Customer Segments" data-html="true"
+                                                            data-trigger="hover"
+                                                            data-content="Comparison of customers’ movement from one segment to another wrt the previous report.
+                                                                                            &lt;br&gt;&lt;em&gt;Positive&lt;/em&gt; movement indicates higher response to modes of engagement
+                                                                                            &lt;br&gt;&lt;em&gt;Negative&lt;/em&gt; movement indicates drop in customers’ responses and lower engagement"></i>
+                                                    </small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="card-body pb-0">
+                                            <div class="customerDriftData">
+                                                <table class="table table-bordered table-hover table-fixed"
+                                                    id="customerDriftTable" data-page-length="3">
+                                                    <tbody>
+                                                        <thead style="font-size: 100%">
+                                                            <tr class="bg-table-head" style="text-align: center">
+                                                                <th>PreviousReport</th>
+                                                                <th>CurrentReport</th>
+                                                                <th>Count</th>
+                                                                <th>Movement</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fourth row starts here -->
+            <div class="row">
+                <!-- customer details table  -->
+                <div class="col-sm-6 col-md-12 col-lg-12">
+                    <div class="card customer-details-card">
+                        <div class="class-header" style="margin-top: -9px">
+                            <div class="card-body pb-0">
+                                <div class="segmentSelector">
+                                    <select class="form-selector salesSelector">
+                                        <option selected="true">Customer Segment</option>
+                                        <option>About to Churn</option>
+                                        <option>Loyalists</option>
+                                        <option>New Customers</option>
+                                        <option>Champions</option>
+                                        <option>Cannot Lose Them</option>
+                                        <option>Churned Out Customers</option>
+                                    </select>
+                                </div>
+                                <p class="title-for-card" style="margin-top: 6px">Customer Details
+                                    <small>
+                                        <i class="fa fa-info-circle" data-toggle="popover" data-placement="bottom"
+                                            data-original-title="Customer Details" data-trigger="hover"
+                                            data-content="Details about different customers"></i>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="card-body pb-0">
+                            <div class="customerDetails">
+                                <div class="customerDetailsData">
+                                    <table class="table table-bordered table-hover table-fixed"
+                                        id="advanceCustomerTable" data-page-length="5">
+                                        <tbody>
+                                            <thead style="font-size: 100%">
+                                                <tr class="bg-table-head" style="text-align: center">
+                                                    <th>Customer</th>
+                                                    <th>City</th>
+                                                    <th>LTV</th>
+                                                    <th>Total Orders</th>
+                                                    <th>Avg Qty/Order</th>
+                                                    <th>Purchase Frequency</th>
+                                                    <th>Last Ordered Date</th>
+                                                </tr>
+                                            </thead>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="main-footer">
+                <div style="text-align: right">
+                    <strong>
+                        Copyright © 2019
+                        <a href="http://www.clove.ai" target="_blank">
+                            <img class="footer-logo" src="images/bottomCloveLogo.jpg" alt="C">Clove</a>
+                    </strong>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+    <!-- /#right-panel -->
+    <!-- Right Panel -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="assets/js/lib/d3-funnel.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/commonFunctions.js"></script>
+    <script src="assets/js/advanceCustomer.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script> -->
+    <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script src="assets/js/lib/chart-js/chart.funnel.bundled.js"></script>
+    <script src="assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+
+</body>
+
+</html>
